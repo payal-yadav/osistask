@@ -1,14 +1,24 @@
-function convert() {
-    let celsius = document.getElementById("celsius").value;
-    let fahrenheit = document.getElementById("fahrenheit").value;
 
-    if (celsius != "") {
-        fahrenheit = (celsius * 9/5) + 32;
-        document.getElementById("fahrenheit").value = fahrenheit.toFixed(2);
-    } else if (fahrenheit != "") {
-        celsius = (fahrenheit - 32) * 5/9;
-        document.getElementById("celsius").value = celsius.toFixed(2);
-    } else {
-        alert("Please enter a temperature value");
-    }
-}
+$(document).ready(function(){
+
+
+    $('.fa-bars').click(function(){
+      $(this).toggleClass('fa-times');
+      $('.navbar').toggleClass('nav-toggle');
+    });
+  
+    $(window).on('load scroll',function(){
+      $('.fa-bars').removeClass('fa-times');
+      $('.navbar').removeClass('nav-toggle');
+  
+      if($(window).scrollTop() > 30){
+        $('.header').css({'background':'#629BB9','box-shadow':'0 .2rem .5rem rgba(0,0,0,.1)'});
+      }else{
+        $('.header').css({'background':'none','box-shadow':'none'});
+      }
+    });
+  
+  
+  
+  
+  });
